@@ -1,0 +1,19 @@
+server {
+    server_name localhost;
+    listen 80;
+
+    root <%= node[:nginx][:appdir] %>/wp;
+    index index.php index.html;
+    try_files $uri $uri/ /index.php?q=$uri&$args;
+
+    location /wp-content/ {
+        root <%= node[:nginx][:appdir] %>;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
+}
