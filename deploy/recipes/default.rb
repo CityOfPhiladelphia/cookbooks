@@ -13,7 +13,7 @@ node[:deploy].each do |application, deploy|
   end
 
   bash "run composer install" do
-    cwd deploy[:deploy_to]
+    cwd "#{deploy[:deploy_to]}/current"
     code <<-EOH
     /usr/local/bin/composer install
     /usr/local/bin/composer install
