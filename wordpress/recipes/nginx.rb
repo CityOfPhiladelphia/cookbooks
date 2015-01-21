@@ -14,3 +14,7 @@ ruby_block "modify sendfile setting" do
     fe.write_file
   end
 end
+
+service "nginx" do
+  action :restart
+end
