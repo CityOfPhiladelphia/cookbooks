@@ -12,12 +12,11 @@ node[:deploy].each do |application, deploy|
     deploy_data deploy
   end
 
-  ruby_block "run composer install" do
-    block do
-      Chef::Log.info("running composer install")
-      Chef::Log.info(`/usr/local/bin/composer install`)
-      Chef::Log.info("running composer install again")
-      Chef::Log.info(`/usr/local/bin/composer install`)
-    end
+  bash "run composer install" do
+    cwd deploy[:deploy_to]
+    code <<-EOH
+    /usr/local/bin/composer install
+    /usr/local/bin/composer install
+    EOH
   end
 end
