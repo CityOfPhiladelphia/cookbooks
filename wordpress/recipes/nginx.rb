@@ -7,6 +7,13 @@ template "/etc/nginx/sites-available/default" do
   mode 0644
 end
 
+template "/etc/nginx/wordpress_fastcgi_params" do
+  source "wordpress_fastcgi_params.erb"
+  owner "root"
+  group "root"
+  mode 0644
+end
+
 ruby_block "modify sendfile setting" do
   block do
     fe = Chef::Util::FileEdit.new("/etc/nginx/nginx.conf")

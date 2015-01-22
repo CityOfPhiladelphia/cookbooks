@@ -1,0 +1,20 @@
+fastcgi_param DB_NAME '<%= node[:mysql][:name] %>';
+fastcgi_param DB_USER '<%= node[:mysql][:user] %>';
+fastcgi_param DB_PASSWORD '<%= node[:mysql][:password] %>';
+fastcgi_param DB_HOST '<%= node[:mysql][:host] %>';
+
+fastcgi_param AUTH_KEY '<%= node[:wordpress][:auth_key] %>';
+fastcgi_param SECURE_AUTH_KEY '<%= node[:wordpress][:secure_auth_key] %>';
+fastcgi_param LOGGED_IN_KEY '<%= node[:wordpress][:logged_in_key] %>';
+fastcgi_param NONCE_KEY '<%= node[:wordpress][:nonce_key] %>';
+fastcgi_param AUTH_SALT '<%= node[:wordpress][:auth_salt] %>';
+fastcgi_param SECURE_AUTH_SALT '<%= node[:wordpress][:secure_auth_salt] %>';
+fastcgi_param LOGGED_IN_SALT '<%= node[:wordpress][:logged_in_salt] %>';
+fastcgi_param NONCE_SALT '<%= node[:wordpress][:nonce_salt] %>';
+
+fastcgi_param WP_DEBUG '<%= node[:wordpress][:debug] %>';
+fastcgi_param WP_SITEURL '<%= node[:wordpress][:siteurl] %>';
+fastcgi_param WP_HOME '<%= node[:wordpress][:home] %>';
+
+fastcgi_param AWS_ACCESS_KEY_ID '<%= node[:aws][:access_key_id] %>';  
+fastcgi_param AWS_SECRET_ACCESS_KEY '<%= node[:aws][:secret_access_key] %>';
