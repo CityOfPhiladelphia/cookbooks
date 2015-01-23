@@ -10,11 +10,6 @@ default[:wordpress][:secure_auth_salt] = 'put your unique phrase here'
 default[:wordpress][:logged_in_salt] = 'put your unique phrase here'
 default[:wordpress][:nonce_salt] = 'put your unique phrase here'
 
-default[:mysql][:name] = 'wp'
-default[:mysql][:user] = 'root'
-default[:mysql][:password] = ''
-default[:mysql][:host] = 'localhost'
-
 default[:nginx][:sendfile] = 'off'
 default[:nginx][:appdir] = '/vagrant'
 

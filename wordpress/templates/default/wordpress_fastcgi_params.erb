@@ -1,7 +1,7 @@
-fastcgi_param DB_NAME '<%= node[:mysql][:name] %>';
-fastcgi_param DB_USER '<%= node[:mysql][:user] %>';
-fastcgi_param DB_PASSWORD '<%= node[:mysql][:password] %>';
-fastcgi_param DB_HOST '<%= node[:mysql][:host] %>';
+fastcgi_param DB_NAME '<%= node[:deploy][:database][:database] %>';
+fastcgi_param DB_USER '<%= node[:deploy][:database][:username] %>';
+fastcgi_param DB_PASSWORD '<%= node[:deploy][:database][:password] %>';
+fastcgi_param DB_HOST '<%= node[:deploy][:database][:host] %>';
 
 fastcgi_param AUTH_KEY '<%= node[:wordpress][:auth_key] %>';
 fastcgi_param SECURE_AUTH_KEY '<%= node[:wordpress][:secure_auth_key] %>';
@@ -16,5 +16,6 @@ fastcgi_param WP_DEBUG '<%= node[:wordpress][:debug] %>';
 fastcgi_param WP_SITEURL '<%= node[:wordpress][:siteurl] %>';
 fastcgi_param WP_HOME '<%= node[:wordpress][:home] %>';
 
+# AWS keys for S3 uploads
 fastcgi_param AWS_ACCESS_KEY_ID '<%= node[:aws][:access_key_id] %>';  
 fastcgi_param AWS_SECRET_ACCESS_KEY '<%= node[:aws][:secret_access_key] %>';
