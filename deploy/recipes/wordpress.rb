@@ -11,10 +11,16 @@ node[:deploy].each do |application, deploy|
   end
 
   bash "run composer install" do
-    cwd "#{deploy[:current_path]}"
+    user deploy[:user]
+    group deploy[:group]
+    cwd deploy[:current_path]
     code <<-EOH
     /usr/local/bin/composer install
     /usr/local/bin/composer install
     EOH
+  end
+
+  directory "#{deploy[:current_path]}/wp-content" do
+    mode '775'
   end
 end
