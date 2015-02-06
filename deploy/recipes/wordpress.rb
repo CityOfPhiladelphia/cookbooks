@@ -26,6 +26,7 @@ node[:deploy].each do |application, deploy|
 
   # Seems a restart is necessary to update plugins, etc.
   service "php5-fpm" do
+    provider Chef::Provider::Service::Upstart
     action :restart
   end
 end
