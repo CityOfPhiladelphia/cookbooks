@@ -23,4 +23,9 @@ node[:deploy].each do |application, deploy|
   directory "#{deploy[:current_path]}/wp-content" do
     mode '775'
   end
+
+  # Seems a restart is necessary to update plugins, etc.
+  service "php5-fpm" do
+    action :restart
+  end
 end
