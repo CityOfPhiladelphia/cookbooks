@@ -2,12 +2,12 @@ server {
     server_name localhost;
     listen 80;
 
-    root <%= node[:deploy]['philagov'][:current_path] %>/wp;
+    root /srv/www/philagov/wp;
     index index.php index.html;
     try_files $uri $uri/ /index.php?q=$uri&$args;
 
     location /wp-content/ {
-        root <%= node[:deploy]['philagov'][:current_path] %>;
+        root /srv/www/philagov;
     }
 
     location ~ \.php$ {
