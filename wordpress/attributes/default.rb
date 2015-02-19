@@ -10,7 +10,5 @@ default[:wordpress][:secure_auth_salt] = 'put your unique phrase here'
 default[:wordpress][:logged_in_salt] = 'put your unique phrase here'
 default[:wordpress][:nonce_salt] = 'put your unique phrase here'
 
-default[:nginx][:sendfile] = 'off'
-
 default[:aws][:access_key_id] = 'no access key defined'
 default[:aws][:secret_access_key] = 'no secret key defined'
