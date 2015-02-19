@@ -1,7 +1,6 @@
-fastcgi_param DB_NAME '<%= node[:deploy]['philagov'][:database][:database] %>';
-fastcgi_param DB_USER '<%= node[:deploy]['philagov'][:database][:username] %>';
-fastcgi_param DB_PASSWORD '<%= node[:deploy]['philagov'][:database][:password] %>';
-fastcgi_param DB_HOST '<%= node[:deploy]['philagov'][:database][:host] %>';
+fastcgi_param WP_SITEURL '<%= node[:wordpress][:siteurl] %>';
+fastcgi_param WP_HOME '<%= node[:wordpress][:home] %>';
+fastcgi_param WP_DEBUG '<%= node[:wordpress][:debug] %>';
 
 fastcgi_param AUTH_KEY '<%= node[:wordpress][:auth_key] %>';
 fastcgi_param SECURE_AUTH_KEY '<%= node[:wordpress][:secure_auth_key] %>';
@@ -12,10 +11,5 @@ fastcgi_param SECURE_AUTH_SALT '<%= node[:wordpress][:secure_auth_salt] %>';
 fastcgi_param LOGGED_IN_SALT '<%= node[:wordpress][:logged_in_salt] %>';
 fastcgi_param NONCE_SALT '<%= node[:wordpress][:nonce_salt] %>';
 
-fastcgi_param WP_DEBUG '<%= node[:wordpress][:debug] %>';
-fastcgi_param WP_SITEURL '<%= node[:wordpress][:siteurl] %>';
-fastcgi_param WP_HOME '<%= node[:wordpress][:home] %>';
-
-# AWS keys for S3 uploads
-fastcgi_param AWS_ACCESS_KEY_ID '<%= node[:aws][:access_key_id] %>';  
-fastcgi_param AWS_SECRET_ACCESS_KEY '<%= node[:aws][:secret_access_key] %>';
+fastcgi_param AWS_ACCESS_KEY_ID '<%= node[:wordpress][:aws_access_key_id] %>';  
+fastcgi_param AWS_SECRET_ACCESS_KEY '<%= node[:wordpress][:aws_secret_access_key] %>';

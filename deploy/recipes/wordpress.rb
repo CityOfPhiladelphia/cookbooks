@@ -29,4 +29,17 @@ node[:deploy].each do |application, deploy|
     provider Chef::Provider::Service::Upstart
     action :restart
   end
+
+  # Set deploy variables in WP environment
+  template "/etc/nginx/wordpress_fastcgi_params" do
+    source "wordpress_fastcgi_params.erb"
+    owner "root"
+    group "root"
+    mode 0644
+  end
+
+  service "nginx" do
+    action :restart
+  end
+
 end

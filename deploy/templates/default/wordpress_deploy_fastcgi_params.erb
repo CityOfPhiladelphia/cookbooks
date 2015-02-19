@@ -1,0 +1,4 @@
+fastcgi_param DB_NAME '<%= node[:deploy]['philagov'][:database][:database] %>';
+fastcgi_param DB_USER '<%= node[:deploy]['philagov'][:database][:username] %>';
+fastcgi_param DB_PASSWORD '<%= node[:deploy]['philagov'][:database][:password] %>';
+fastcgi_param DB_HOST '<%= node[:deploy]['philagov'][:database][:host] %>';
