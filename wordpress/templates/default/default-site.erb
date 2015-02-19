@@ -2,12 +2,12 @@ server {
     server_name localhost;
     listen 80;
 
-    root /srv/www/philagov/wp;
+    root /srv/www/philagov/current/wp;
     index index.php index.html;
     try_files $uri $uri/ /index.php?q=$uri&$args;
 
     location /wp-content/ {
-        root /srv/www/philagov;
+        root /srv/www/philagov/current;
     }
 
     location ~ \.php$ {
