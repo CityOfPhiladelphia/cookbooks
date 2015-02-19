@@ -10,14 +10,11 @@ node[:deploy].each do |application, deploy|
     deploy_data deploy
   end
 
-  bash "run composer install" do
+  execute "run composer install" do
     user deploy[:user]
     group deploy[:group]
     cwd deploy[:current_path]
-    code <<-EOH
-    /usr/local/bin/composer install
-    /usr/local/bin/composer install
-    EOH
+    command "/usr/local/bin/composer install"
   end
 
   directory "#{deploy[:current_path]}/wp-content" do
