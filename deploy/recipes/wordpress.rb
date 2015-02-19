@@ -31,8 +31,8 @@ node[:deploy].each do |application, deploy|
   end
 
   # Set deploy variables in WP environment
-  template "/etc/nginx/wordpress_fastcgi_params" do
-    source "wordpress_fastcgi_params.erb"
+  template "/etc/nginx/wordpress_deploy_fastcgi_params" do
+    source "wordpress_deploy_fastcgi_params.erb"
     owner "root"
     group "root"
     mode 0644
