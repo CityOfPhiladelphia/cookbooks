@@ -6,11 +6,3 @@ bash "sync staging db with production" do
     mysql -h#{db['stag']['host']} -uwp -p#{db['stag']['pass']} wp
   EOH
 end
-
-service "monit" do
-  action :stop
-end
-
-execute "shutdown machine" do
-  command "halt"
-end
