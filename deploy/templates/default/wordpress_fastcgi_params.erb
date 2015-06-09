@@ -14,6 +14,8 @@ fastcgi_param NONCE_SALT '<%= node[:wordpress][:nonce_salt] %>';
 fastcgi_param AWS_ACCESS_KEY_ID '<%= node[:wordpress][:aws_access_key_id] %>';  
 fastcgi_param AWS_SECRET_ACCESS_KEY '<%= node[:wordpress][:aws_secret_access_key] %>';
 
+fastcgi_param SWIFTYPE_ID '<%= node[:wordpress][:swiftype_id] %>';
+
 fastcgi_param DB_NAME '<%= node[:deploy]['philagov'][:database][:database] %>';
 fastcgi_param DB_USER '<%= node[:deploy]['philagov'][:database][:username] %>';
 fastcgi_param DB_PASSWORD '<%= node[:deploy]['philagov'][:database][:password] %>';
