@@ -11,6 +11,25 @@ node[:deploy].each do |application, deploy|
     deploy_data deploy
   end
 
+  ruby_block "update composer.json" do
+    block do
+      require 'json'
+      composer_file = "#{deploy[:current_path]}/composer.json"
+      c_hash = JSON.parse(File.read(composer_file))
+      c_hash["repositories"] = [
+        {
+          "type" => "composer",
+          "url" => node[:wordpress][:composer_url]
+        }
+      ]
+      c_hash["require"].delete("wpackagist-plugin/wpfront-user-role-editor")
+      c_hash["require"]["wpfront/user-role-editor-personal-pro"] = "~2.10"
+      File.open(composer_file, "w") do |f|
+        f.write(c_hash.to_json)
+      end
+    end
+  end
+
   execute "run composer install" do
     user deploy[:user]
     group deploy[:group]
