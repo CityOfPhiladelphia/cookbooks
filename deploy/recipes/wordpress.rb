@@ -11,17 +11,15 @@ node[:deploy].each do |application, deploy|
     deploy_data deploy
   end
 
-  execute "set private repo" do
-    user deploy[:user]
-    group deploy[:group]
-    command "/usr/local/bin/composer config -g repositories.private composer #{node[:wordpress][:composer_url]}"
-  end
-
-  execute "run composer install" do
+  bash "run composer install" do
     user deploy[:user]
     group deploy[:group]
     cwd deploy[:current_path]
-    command "/usr/local/bin/composer install"
+    environment ({'HOME' => '/home/deploy'})
+    code <<-EOH
+      /usr/local/bin/composer config -g repositories.private composer #{node[:wordpress][:composer_url]}
+      /usr/local/bin/composer install
+    EOH
   end
 
   directory "#{deploy[:current_path]}/wp-content" do
