@@ -1,2 +1,2 @@
 # cookbooks
-Chef cookbooks for phila.gov.
+Chef cookbooks for the City of Philadelphia
