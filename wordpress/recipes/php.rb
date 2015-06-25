@@ -9,10 +9,3 @@ bash "install composer" do
   chmod 755 /usr/local/bin/composer
   EOH
 end
-
-bash "install wp-cli" do
-  code <<-EOH
-  curl -sS https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > /usr/local/bin/wp
-  chmod 755 /usr/local/bin/wp
-  EOH
-end
