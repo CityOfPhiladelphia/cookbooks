@@ -38,9 +38,6 @@ node[:deploy].each do |application, deploy|
     owner "root"
     group "root"
     mode 0644
-    variables(
-      :deploy => deploy
-    )
   end
 
   service "nginx" do
