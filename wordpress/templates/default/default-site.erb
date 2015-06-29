@@ -1,16 +1,7 @@
-fastcgi_cache_path /var/run/nginx-cache levels=1:2 keys_zone=WORDPRESS:100m inactive=60m;
-fastcgi_cache_key "$scheme$request_method$host$request_uri";
-fastcgi_cache_use_stale error timeout invalid_header http_500;
-fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
-
 server {
-    if ($http_x_forwarded_proto = http) {
-        return 301 https://$host$request_uri;
-    }
-
-    add_header Strict-Transport-Security "max-age=31536000";
-
-    set $app_root /srv/www/philagov/current;
+    include https.conf;
+    include proxy/*.conf;
+    include app_root.conf;
 
     root $app_root/wp;
     index index.php;
@@ -52,12 +43,5 @@ server {
         add_header X-Cache $upstream_cache_status;
 
         fastcgi_pass unix:/var/run/php5-fpm.sock;
-    }
-
-    location /property/ {
-        proxy_set_header Host cityofphiladelphia.github.io;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass https://cityofphiladelphia.github.io/property2/;
     }
 }

@@ -32,6 +32,15 @@ node[:deploy].each do |application, deploy|
     action :restart
   end
 
+  # Set app root for nginx
+  template "/etc/nginx/app_root.conf" do
+    source "app_root.conf.erb"
+    owner "root"
+    group "root"
+    mode 0644
+    variables :deploy => deploy
+  end
+
   # Set variables in WP environment
   template "/etc/nginx/wordpress_fastcgi_params" do
     source "wordpress_fastcgi_params.erb"
