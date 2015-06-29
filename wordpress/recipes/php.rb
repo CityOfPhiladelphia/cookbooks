@@ -9,3 +9,13 @@ bash "install composer" do
   chmod 755 /usr/local/bin/composer
   EOH
 end
+
+ruby_block "php.ini tweaks" do
+  block do
+    fe = Chef::Util::FileEdit.new("/etc/php5/fpm/php.ini")
+    fe.search_file_replace_line(/post_max_size/, "post_max_size = 100M")
+    fe.search_file_replace_line(/upload_max_filesize/, "upload_max_filesize = 100M")
+    fe.search_file_replace_line(/expose_php/, "expose_php = Off")
+    fe.write_file
+  end
+end
