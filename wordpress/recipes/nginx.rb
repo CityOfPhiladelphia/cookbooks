@@ -21,8 +21,8 @@ template "/etc/nginx/conf.d/large_uploads.conf" do
   mode 0644
 end
 
-template "/etc/nginx/https.conf" do
-  source "https.conf.erb"
+template "/etc/nginx/https_redirect.conf" do
+  source "https_redirect.conf.erb"
   owner "root"
   group "root"
   mode 0644
