@@ -1,7 +1,7 @@
 package "nginx"
 
 template "/etc/nginx/sites-available/default" do
-  source "default-site.erb"
+  source "default_site.erb"
   owner "root"
   group "root"
   mode 0644
