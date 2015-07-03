@@ -16,7 +16,7 @@ server {
 
     add_header X-Cache $upstream_cache_status;
 
-    set $skip_cache 0;
+    set $skip_cache 1;
 
     # POST requests and urls with a query string should always go to PHP
     if ($request_method = POST) {
