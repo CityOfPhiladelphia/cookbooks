@@ -33,3 +33,10 @@ directory '/etc/nginx/proxy' do
   group 'root'
   mode '0755'
 end
+
+template "/etc/nginx/proxy/s3.conf" do
+  source "proxy_s3.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+end

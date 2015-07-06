@@ -11,6 +11,7 @@ default[:wordpress][:secure_auth_salt] = 'put your unique phrase here'
 default[:wordpress][:logged_in_salt] = 'put your unique phrase here'
 default[:wordpress][:nonce_salt] = 'put your unique phrase here'
 
-# AWS keys for S3 uploads
+# AWS keys and bucket for S3 uploads
 default[:wordpress][:aws_access_key_id] = 'no access key defined'
 default[:wordpress][:aws_secret_access_key] = 'no secret key defined'
+default[:wordpress][:s3_bucket] = 'no bucket defined'
