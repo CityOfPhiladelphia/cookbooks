@@ -1,4 +1,4 @@
-location /media/ {
+location /wp-content/uploads/ {
     proxy_set_header Host 's3.amazonaws.com'; 
     proxy_pass https://s3.amazonaws.com/<%= node[:wordpress][:s3_bucket] %>/;             
 }
