@@ -1,7 +1,5 @@
 server {
-    include https_redirect.conf;
-    include proxy/*.conf;
-    include app_root.conf;
+    include server.d/*.conf;
 
     root $app_root/wp;
     index index.php;

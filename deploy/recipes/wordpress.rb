@@ -33,7 +33,7 @@ node[:deploy].each do |application, deploy|
   end
 
   # Set app root for nginx
-  template "/etc/nginx/app_root.conf" do
+  template "/etc/nginx/server.d/app_root.conf" do
     source "app_root.conf.erb"
     owner "root"
     group "root"
