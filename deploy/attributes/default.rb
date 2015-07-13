@@ -15,3 +15,5 @@ default[:wordpress][:nonce_salt] = 'put your unique phrase here'
 default[:wordpress][:aws_access_key_id] = 'no access key defined'
 default[:wordpress][:aws_secret_access_key] = 'no secret key defined'
 default[:wordpress][:s3_bucket] = 'no bucket defined'
+
+default[:wordpress][:https] = 'on'

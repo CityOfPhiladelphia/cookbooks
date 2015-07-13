@@ -21,5 +21,5 @@ fastcgi_param DB_USER '<%= @deploy[:database][:username] %>';
 fastcgi_param DB_PASSWORD '<%= @deploy[:database][:password] %>';
 fastcgi_param DB_HOST '<%= @deploy[:database][:host] %>';
 
-# Tell WordPress https is always on to avoid wp-admin loops
-fastcgi_param HTTPS on;
+# Tell proxied WordPress that https is on to avoid wp-admin loops
+fastcgi_param HTTPS <%= node[:wordpress][:https] %>;
