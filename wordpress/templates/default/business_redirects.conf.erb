@@ -1,5 +1,11 @@
 location /Pages/Home.aspx {
-    return 301 /;
+    return 301 $scheme://$host/;
+}
+location /pages/home.aspx {
+    return 301 $scheme://$host/;
+}
+location /pages/housingrentallicense.aspx {
+    return 301 $scheme://$host/housing-inspection-license/;
 }
 location /documents/licenses/partners_for_good_housing.pdf {
     return 301 $scheme://$host/wp-content/uploads/partners_for_good_housing.pdf;
