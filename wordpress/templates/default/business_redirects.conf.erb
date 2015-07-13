@@ -1,3 +1,9 @@
+# Return empty doc to preempt silly 403
+location = /wp-content/uploads/masterslider/custom.css {
+    return 204;
+}
+
+# Redirects
 location = /Pages/Home.aspx {
     return 301 $scheme://$host/;
 }
