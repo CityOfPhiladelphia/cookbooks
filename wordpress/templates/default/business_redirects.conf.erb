@@ -19,6 +19,17 @@ location = /Pages/BusinessPrivilegeLicense.aspx {
 location = /Pages/BusinessPrivilegeTaxNumber.aspx {
     return 301 $scheme://$host//obtain-federal-tax-id-number/;
 }
+location = /Pages/ChildCareFacilityLicense.aspx {
+    return 301 $scheme://$host//child-care-facility-license/;
+}
+location = /Pages/HousingRentalLicense.aspx {
+    return 301 $scheme://$host//housing-inspection-license/;
+}
+location = /Pages/Result.aspx {
+    if ($args ~ "section=Permits") {
+        return 301 $scheme://$host//get-licenses-permits/;
+    }
+}
 location = /pages/housingrentallicense.aspx {
     return 301 $scheme://$host/housing-inspection-license/;
 }
