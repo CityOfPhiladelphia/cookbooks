@@ -4,28 +4,25 @@ location = /wp-content/uploads/masterslider/custom.css {
 }
 
 # Redirects
-location = /Pages/Home.aspx {
+location ~* ^/pages/home.aspx$ {
     return 301 $scheme://$host/;
 }
-location = /pages/home.aspx {
-    return 301 $scheme://$host/;
-}
-location = /Pages/BusinessPrivilegeTax.aspx {
+location ~* ^/Pages/BusinessPrivilegeTax.aspx$ {
     return 301 $scheme://$host/overview-of-business-income-and-receipts-tax/;
 }
-location = /Pages/BusinessPrivilegeLicense.aspx {
+location ~* ^/Pages/BusinessPrivilegeLicense.aspx$ {
     return 301 $scheme://$host/commercial-activity-license-city-of-philadelphia-tax-id/;
 }
-location = /Pages/BusinessPrivilegeTaxNumber.aspx {
+location ~* ^/Pages/BusinessPrivilegeTaxNumber.aspx$ {
     return 301 $scheme://$host/obtain-federal-tax-id-number/;
 }
-location = /Pages/ChildCareFacilityLicense.aspx {
+location ~* ^/Pages/ChildCareFacilityLicense.aspx$ {
     return 301 $scheme://$host/child-care-facility-license/;
 }
-location = /Pages/HousingRentalLicense.aspx {
+location ~* ^/Pages/HousingRentalLicense.aspx$ {
     return 301 $scheme://$host/housing-inspection-license/;
 }
-location = /Pages/Result.aspx {
+location ~* ^/Pages/Result.aspx$ {
     if ($args ~ "section=Permits") {
         return 301 $scheme://$host/get-licenses-permits/;
     }
@@ -36,360 +33,357 @@ location = /Pages/Result.aspx {
         return 301 $scheme://$host/understand-taxes/;
     }
 }
-location = /Pages/Zoning.aspx {
+location ~* ^/Pages/Zoning.aspx$ {
     return 301 $scheme://$host/location-and-zoning-information/;
 }
-location = /Pages/PlumbersExamApplication.aspx {
+location ~* ^/Pages/PlumbersExamApplication.aspx$ {
     return 301 $scheme://$host/plumbers-license/;
 }
-location = /Pages/ElectricalContractorLicense.aspx {
+location ~* ^/Pages/ElectricalContractorLicense.aspx$ {
     return 301 $scheme://$host/electrical-contractor-license/;
 }
-location = /Pages/SpecialInspectionsProgram.aspx {
+location ~* ^/Pages/SpecialInspectionsProgram.aspx$ {
     return 301 $scheme://$host/special-inspections-program/;
 }
-location = /Pages/PermitAppeals.aspx {
+location ~* ^/Pages/PermitAppeals.aspx$ {
     return 301 $scheme://$host/permit-appeals/;
 }
-location = /Pages/VacantResidentialPropertyLotLicense.aspx {
+location ~* ^/Pages/VacantResidentialPropertyLotLicense.aspx$ {
     return 301 $scheme://$host/vacant-residential-propertylot-license/;
 }
-location = /Pages/ContractorLicense.aspx {
+location ~* ^/Pages/ContractorLicense.aspx$ {
     return 301 $scheme://$host/contractor-license/;
 }
-location = /Pages/CurbSetterLicense.aspx {
+location ~* ^/Pages/CurbSetterLicense.aspx$ {
     return 301 $scheme://$host/curb-setters-license/;
 }
-location = /Pages/ElectricalInspectorLicense.aspx {
+location ~* ^/Pages/ElectricalInspectorLicense.aspx$ {
     return 301 $scheme://$host/electrical-inspector-license/;
 }
-location = /Pages/EngineerLicense.aspx {
+location ~* ^/Pages/EngineerLicense.aspx$ {
     return 301 $scheme://$host/engineer-license/;
 }
-location = /Pages/FireSuppressionContractor.aspx {
+location ~* ^/Pages/FireSuppressionContractor.aspx$ {
     return 301 $scheme://$host/fire-suppression-systems-contractor-license/;
 }
-location = /Pages/FireSuppressionSystemsWorkerCertification.aspx {
+location ~* ^/Pages/FireSuppressionSystemsWorkerCertification.aspx$ {
     return 301 $scheme://$host/fire-suppression-systems-worker-and-apprentice-certification/;
 }
-location = /Pages/FireAlarmInspectorsLicense.aspx {
+location ~* ^/Pages/FireAlarmInspectorsLicense.aspx$ {
     return 301 $scheme://$host/fire-alarm-inspectors-license/;
 }
-location = /Pages/ExpeditersLicense.aspx {
+location ~* ^/Pages/ExpeditersLicense.aspx$ {
     return 301 $scheme://$host/expediters-license/;
 }
-location = /Pages/BuildingPermits.aspx {
+location ~* ^/Pages/BuildingPermits.aspx$ {
     return 301 $scheme://$host/licenses-and-inspections-building-permits/;
 }
-location = /Pages/DumpsterLicense-Private.aspx {
+location ~* ^/Pages/DumpsterLicense-Private.aspx$ {
     return 301 $scheme://$host/dumpster-license-private/;
 }
-location = /Pages/DumpsterLicense-Public-ROW.aspx {
+location ~* ^/Pages/DumpsterLicense-Public-ROW.aspx$ {
     return 301 $scheme://$host/dumpster-license-public-right-of-way/;
 }
-location = /Pages/HandbillLicense.aspx {
+location ~* ^/Pages/HandbillLicense.aspx$ {
     return 301 $scheme://$host/handbill-distribution-license/;
 }
-location = /Pages/OutdoorAdvertising.aspx {
+location ~* ^/Pages/OutdoorAdvertising.aspx$ {
     return 301 $scheme://$host/outdoor-advertising-sign-license/;
 }
-location = /Pages/scales_and_scanners.aspx {
+location ~* ^/Pages/scales_and_scanners.aspx$ {
     return 301 $scheme://$host/scales-license/;
 }
-location = /Pages/ElectricalPermit.aspx {
+location ~* ^/Pages/ElectricalPermit.aspx$ {
     return 301 $scheme://$host/electrical-permit/;
 }
-location = /Pages/PlumbingPermit.aspx {
+location ~* ^/Pages/PlumbingPermit.aspx$ {
     return 301 $scheme://$host/plumbing-permit/;
 }
-location = /pages/housingrentallicense.aspx {
+location ~* ^/pages/housingrentallicense.aspx$ {
     return 301 $scheme://$host/housing-inspection-license/;
 }
-location = /documents/licenses/partners_for_good_housing.pdf {
+location ~* ^/documents/licenses/partners_for_good_housing.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/partners_for_good_housing.pdf;
 }
-location = /Documents/Licenses/partners_for_good_housing.pdf {
-    return 301 $scheme://$host/wp-content/uploads/partners_for_good_housing.pdf;
-}
-location = /Documents/Licenses/Fire_Supp_Systems_Contractor.pdf {
+location ~* ^/Documents/Licenses/Fire_Supp_Systems_Contractor.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Fire_Supp_Systems_Contractor.pdf;
 }
-location = /documents/commercial_trash.pdf {
+location ~* ^/documents/commercial_trash.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/commercial_trash.pdf;
 }
-location = /Documents/Change_Form_Internet.pdf {
+location ~* ^/Documents/Change_Form_Internet.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Change_Form.pdf;
 }
-location = /Documents/Licenses/81_1000_Sheet%20Metal.pdf {
+location ~* ^/Documents/Licenses/81_1000_Sheet%20Metal.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/sheet-metal.pdf;
 }
-location = /Documents/Licenses/honor_box.pdf {
+location ~* ^/Documents/Licenses/honor_box.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/honor_box.pdf;
 }
-location = /Documents/Licenses/high_rise_fire_code.pdf {
+location ~* ^/Documents/Licenses/high_rise_fire_code.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/high_rise_fire_code.pdf;
 }
-location = /Documents/Licenses/81_986_FireSupWrkrAppren.pdf {
+location ~* ^/Documents/Licenses/81_986_FireSupWrkrAppren.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/fire_suppression_system_worker.pdf;
 }
-location = /Documents/Licenses/amusement.pdf {
+location ~* ^/Documents/Licenses/amusement.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/amusement.pdf;
 }
-location = /Documents/Licenses/BingoLicenseApplication.pdf {
+location ~* ^/Documents/Licenses/BingoLicenseApplication.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/bingo-license-application.pdf;
 }
-location = /Documents/Licenses/81_902_Engineers.pdf {
+location ~* ^/Documents/Licenses/81_902_Engineers.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Engineer-License-Boiler-Stationary-and-Refrigeration.pdf;
 }
-location = /Documents/Licenses/contractor.pdf {
+location ~* ^/Documents/Licenses/contractor.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Contractor.pdf;
 }
-location = /Documents/Licenses/outdoor_adv.pdf {
+location ~* ^/Documents/Licenses/outdoor_adv.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Outdoor-Advertising.pdf;
 }
-location = /documents/guides/A_Guide_to_Starting_Your_Food_Related_Business.pdf {
+location ~* ^/documents/guides/A_Guide_to_Starting_Your_Food_Related_Business.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/A-Guide-to-Starting-Your-Food-Related-Business.pdf;
 }
-location = /documents/permits/bldg_permit_app.pdf {
+location ~* ^/documents/permits/bldg_permit_app.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Application-for-Building-Permit.pdf;
 }
-location = /Documents/Licenses/miscellaneous.pdf {
+location ~* ^/Documents/Licenses/miscellaneous.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/miscellaneous-licenses.pdf;
 }
-location = /Documents/Licenses/child_care.pdf {
+location ~* ^/Documents/Licenses/child_care.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Child-Care-Application.pdf;
 }
-location = /Documents/Licenses/newsstand.pdf {
+location ~* ^/Documents/Licenses/newsstand.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/newsstand.pdf;
 }
-location = /Documents/Permits/StatementSpecialInspections.pdf {
+location ~* ^/Documents/Permits/StatementSpecialInspections.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/StatementSpecialInspections.pdf;
 }
-location = /documents/medallion_attachment_instructions.pdf {
+location ~* ^/documents/medallion_attachment_instructions.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/medallion_attachment_instructions.pdf;
 }
-location = /documents/medallion_faq.pdf {
+location ~* ^/documents/medallion_faq.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/medallion_FAQ.pdf;
 }
-location = /Documents/Licenses/dumpster_plot_plan.pdf {
+location ~* ^/Documents/Licenses/dumpster_plot_plan.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/dumpster_plot_plan.pdf;
 }
-location = /documents/licenses/dumpster.pdf {
+location ~* ^/documents/licenses/dumpster.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Dumpster-Private-or-Public.pdf;
 }
-location = /Documents/Licenses/ZoningAppealInstructions.pdf {
+location ~* ^/Documents/Licenses/ZoningAppealInstructions.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ZoningAppealInstructions.pdf;
 }
-location = /Documents/ZoningChecklist.pdf {
+location ~* ^/Documents/ZoningChecklist.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ZoningChecklist.pdf;
 }
-location = /Documents/Licenses/special_assembly.pdf {
+location ~* ^/Documents/Licenses/special_assembly.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/special_assembly.pdf;
 }
-location = /Documents/Licenses/bizpriv.pdf {
+location ~* ^/Documents/Licenses/bizpriv.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/combined-BIRT-and-CAL.pdf;
 }
-location = /Documents/Licenses/81_1001_Warm%20Air.pdf {
+location ~* ^/Documents/Licenses/81_1001_Warm%20Air.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Warm-Air-Installer-License-81_1001_Warm-Air.pdf;
 }
-location = /Documents/Licenses/scales_and_scanners.pdf {
+location ~* ^/Documents/Licenses/scales_and_scanners.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/scales_and_scanners.pdf;
 }
-location = /Documents/Licenses/SpecialDistrictVendingLicense.pdf {
+location ~* ^/Documents/Licenses/SpecialDistrictVendingLicense.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/SpecialDistrictVendingLicense.pdf;
 }
-location = /Documents/Licenses/housing_rental.pdf {
+location ~* ^/Documents/Licenses/housing_rental.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/housing_rental.pdf;
 }
-location = /documents/licenses/vacant-property.pdf {
+location ~* ^/documents/licenses/vacant-property.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/vacant-property.pdf;
 }
-location = /Documents/Licenses/automobile.pdf {
+location ~* ^/Documents/Licenses/automobile.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/automobile.pdf;
 }
-location = /Documents/eCLIPSEBrochure.pdf {
+location ~* ^/Documents/eCLIPSEBrochure.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/eCLIPSEBrochure.pdf;
 }
-location = /Documents/Licenses/food.pdf {
+location ~* ^/Documents/Licenses/food.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Food-Service-License.pdf;
 }
-location = /documents/guides/specialevents.pdf {
+location ~* ^/documents/guides/specialevents.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/SpecialEvents.pdf;
 }
-location = /Documents/certificates/Real_Estate_Cert.pdf {
+location ~* ^/Documents/certificates/Real_Estate_Cert.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Real_Estate_Cert.pdf;
 }
-location = /Documents/permits/PlumbingPermitChecklist.pdf {
+location ~* ^/Documents/permits/PlumbingPermitChecklist.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/PlumbingPermitChecklist.pdf;
 }
-location = /Documents/permits/plumbingpermit.pdf {
+location ~* ^/Documents/permits/plumbingpermit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/plumbingpermit.pdf;
 }
-location = /documents/licenses/81_181_plumbing.pdf {
+location ~* ^/documents/licenses/81_181_plumbing.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Plumbing-License-Application-81_181.pdf;
 }
-location = /Documents/Permits/electricalInspections.pdf {
+location ~* ^/Documents/Permits/electricalInspections.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/electricalInspections.pdf;
 }
-location = /Documents/Permits/ElectricalPermitFees.pdf {
+location ~* ^/Documents/Permits/ElectricalPermitFees.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ElectricalPermitFees.pdf;
 }
-location = /Documents/Permits/ElectricalPermitChecklist.pdf {
+location ~* ^/Documents/Permits/ElectricalPermitChecklist.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ElectricalPermitChecklist.pdf;
 }
-location = /Documents/Permits/electricalPermit.pdf {
+location ~* ^/Documents/Permits/electricalPermit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/electricalPermit.pdf;
 }
-location = /Documents/Licenses/electrical.pdf {
+location ~* ^/Documents/Licenses/electrical.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Electrical-Contractor-or-Electrical-Inspector-Application.pdf;
 }
-location = /Documents/Permits/PrelimReviewApp.pdf {
+location ~* ^/Documents/Permits/PrelimReviewApp.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/PrelimReviewApp.pdf;
 }
-location = /documents/permits/ez%20sprinkler%2013r%20permit.pdf {
+location ~* ^/documents/permits/ez%20sprinkler%2013r%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Sprinkler-13R-Permit-Residential.pdf;
 }
-location = /Documents/Permits/EZ%20Sprinkler%2013%20Permit.pdf {
+location ~* ^/Documents/Permits/EZ%20Sprinkler%2013%20Permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Sprinkler-Relocation-NFPA13-Permit.pdf;
 }
-location = /Documents/Permits/ApprovedBackflowPreventionDevices.pdf {
+location ~* ^/Documents/Permits/ApprovedBackflowPreventionDevices.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/PWDApprovedBackflowPreventionDevices.pdf;
 }
-location = /Documents/Permits/PWD_CU100.pdf {
+location ~* ^/Documents/Permits/PWD_CU100.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/PWDStatement-of-Existing-Backflow-Prevention-Assembly-CU-100.pdf;
 }
-location = /documents/permits/specialinspectionsform.pdf {
+location ~* ^/documents/permits/specialinspectionsform.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/SpecialInspectionsForm.pdf;
 }
-location = /Documents/Licenses/AdministrativeCode_Chapter9.pdf {
+location ~* ^/Documents/Licenses/AdministrativeCode_Chapter9.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/AdministrativeCode_Chapter9.pdf;
 }
-location = /Documents/Permits/AcceleratedChecklist.pdf {
+location ~* ^/Documents/Permits/AcceleratedChecklist.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/AcceleratedChecklist.pdf;
 }
-location = /Documents/permits/ExhibitA_Daily%20Report.pdf {
+location ~* ^/Documents/permits/ExhibitA_Daily%20Report.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ExhibitA_Special-Inspection-Daily-Report.pdf;
 }
-location = /Documents/Licenses/Qualifications%20of%20Special%20Inspection%20Agencies%20and%20Inspectors.pdf {
+location ~* ^/Documents/Licenses/Qualifications%20of%20Special%20Inspection%20Agencies%20and%20Inspectors.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Qualifications-of-Special-Inspection-Agencies-and-Inspectors.pdf;
 }
-location = /Documents/PreventingYouthSalesFAQ.pdf {
+location ~* ^/Documents/PreventingYouthSalesFAQ.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/TobaccoPreventingYouthSalesFAQ.pdf;
 }
-location = /Documents/permits/ExhibitB_Deficiency%20Report.pdf {
+location ~* ^/Documents/permits/ExhibitB_Deficiency%20Report.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ExhibitB_Special-Inspections-Deficiency-Report.pdf;
 }
-location = /Documents/Permits/ExhibitC_Final%20Report.pdf {
+location ~* ^/Documents/Permits/ExhibitC_Final%20Report.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ExhibitC_Special-Inspections-Final-Report.pdf;
 }
-location = /documents/permits/dutiesandresponsibilitiesagreement.pdf {
+location ~* ^/documents/permits/dutiesandresponsibilitiesagreement.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Special-Instructions-DutiesandResponsibilitiesAgreement.pdf;
 }
-location = /Documents/Permits/Special%20Inspections%20Final%20Compliance%20Form.pdf {
+location ~* ^/Documents/Permits/Special%20Inspections%20Final%20Compliance%20Form.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Special-Inspections-Final-Compliance-Form.pdf;
 }
-location = /documents/permits/structural_design_criteria.pdf {
+location ~* ^/documents/permits/structural_design_criteria.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/structural_design_criteria.pdf;
 }
-location = /Documents/Art%20Commission%20Submission%20Procedure.PDF {
+location ~* ^/Documents/Art%20Commission%20Submission%20Procedure.PDF {
     return 301 $scheme://$host/wp-content/uploads/Art-Commission-Procedure-Requirements-for-Signs-Awnings-Canopies-etc.pdf;
 }
-location = /Documents/Art%20Commission%20Submission%20Procedure%20Newsstands.pdf {
+location ~* ^/Documents/Art%20Commission%20Submission%20Procedure%20Newsstands.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Art-Commission-Submission-Procedure-Newsstands.pdf;
 }
-location = /documents/permits/fee_building.pdf {
+location ~* ^/documents/permits/fee_building.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Summary-of-Building-Permit-Fees.pdf;
 }
-location = /Documents/Art%20Commission%20Submission%20Procedure%20Construction.pdf {
+location ~* ^/Documents/Art%20Commission%20Submission%20Procedure%20Construction.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Art-Commission-Submission-Procedure-Construction.pdf;
 }
-location = /Documents/Permits/TopBuildingPermitApplicationDeficiencies.pdf {
+location ~* ^/Documents/Permits/TopBuildingPermitApplicationDeficiencies.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/TopBuildingPermitApplicationDeficiencies.pdf;
 }
-location = /documents/zoningapplication.pdf {
+location ~* ^/documents/zoningapplication.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Zoning-Use-Registration-Permit-Application.pdf;
 }
-location = /documents/licenses/license.checklist.engineerabcd%20warm%20air.pdf {
+location ~* ^/documents/licenses/license.checklist.engineerabcd%20warm%20air.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/license.checklist-Boilers-Engineers-Refridgeration-ABCD-Warm-Air.pdf;
 }
-location = /Documents/Licenses/FS-AnnualCer%202012.pdf {
+location ~* ^/Documents/Licenses/FS-AnnualCer%202012.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Sprinkler-Standpipe-Systems-Annual-Certification.pdf;
 }
-location = /Documents/Licenses/SpHazAnCer%202012.pdf {
+location ~* ^/Documents/Licenses/SpHazAnCer%202012.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Special-Hazard-Systems-Annual-Certification.pdf;
 }
-location = /Documents/Permits/PAAccessibilityAdvisoryBoardPetition.pdf {
+location ~* ^/Documents/Permits/PAAccessibilityAdvisoryBoardPetition.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/PA-Accessibility-Advisory-Board-Appeal-Form.pdf;
 }
-location = /Documents/Licenses/ConstructionSignRequirements-Major.pdf {
+location ~* ^/Documents/Licenses/ConstructionSignRequirements-Major.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Major-Building-Sign-Requirements.pdf;
 }
-location = /Documents/Permits/PermitTimesCostList.pdf {
+location ~* ^/Documents/Permits/PermitTimesCostList.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/List-of-Processing-and-Application-Fees.pdf;
 }
-location = /documents/licenses/automobile.pdf {
+location ~* ^/documents/licenses/automobile.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/License-Application-Automobile-Etc.pdf;
 }
-location = /Documents/Permits/EZWindowsDoorsPermit.pdf {
+location ~* ^/Documents/Permits/EZWindowsDoorsPermit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZWindowsDoorsPermit.pdf;
 }
-location = /documents/permits/ez%20security%20gates%20grills%20permit.pdf {
+location ~* ^/documents/permits/ez%20security%20gates%20grills%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Security-Gates-Grills-Permit.pdf;
 }
-location = /documents/permits/ez%20kitchen%20fss%20standards.pdf {
+location ~* ^/documents/permits/ez%20kitchen%20fss%20standards.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Kitchen-Fire-Suppression-System-Standards.pdf;
 }
-location = /documents/permits/ez%20re-roofing%20permit.pdf {
+location ~* ^/documents/permits/ez%20re-roofing%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-re-Roofing.pdf;
 }
-location = /Documents/Permits/EZ%20Porch%20Enclosures%20Permit.pdf {
+location ~* ^/Documents/Permits/EZ%20Porch%20Enclosures%20Permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Porch-Enclosures-Permit.pdf;
 }
-location = /documents/permits/ezpoolspastandards.pdf {
+location ~* ^/documents/permits/ezpoolspastandards.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Pool-and-Spa-Permit-Standards.pdf;
 }
-location = /documents/permits/ez%20interior%20demolition%20permit.pdf {
+location ~* ^/documents/permits/ez%20interior%20demolition%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Non-Load-Bearing-Interior-Demolition-Permit.pdf;
 }
-location = /documents/permits/ez%20level%20i%20alts%20standards.pdf {
+location ~* ^/documents/permits/ez%20level%20i%20alts%20standards.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Limited-Commercial-Alterations-Standards-Level-I-Alts.pdf;
 }
-location = /documents/permits/ezalterationsstandards.pdf {
+location ~* ^/documents/permits/ezalterationsstandards.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Interior-Alterations-Permit.pdf;
 }
-location = /documents/permits/ez%20exterior%20walls%20permit.pdf {
+location ~* ^/documents/permits/ez%20exterior%20walls%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Exterior-Wall-Coverings.pdf;
 }
-location = /documents/permits/ez%20ductwork%20warm%20air%20permit.pdf {
+location ~* ^/documents/permits/ez%20ductwork%20warm%20air%20permit.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Ductwork-Warm-Air-Permit.pdf;
 }
-location = /documents/permits/ezdeckstandards.pdf {
+location ~* ^/documents/permits/ezdeckstandards.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/EZ-Deck-Permit.pdf;
 }
-location = /Documents/Licenses/ConstructionSignRequirements-Other.pdf {
+location ~* ^/Documents/Licenses/ConstructionSignRequirements-Other.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/ConstructionSignRequirements-Other.pdf;
 }
-location = /Documents/Permits/DryWetFireSuppressionApp.pdf {
+location ~* ^/Documents/Permits/DryWetFireSuppressionApp.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Dry-and-Wet-chemical-Extinguishing-System.pdf;
 }
-location = /Documents/Permits/CommercialCertificateofDesign.pdf {
+location ~* ^/Documents/Permits/CommercialCertificateofDesign.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Certificate-of-Design-for-Commercial-Construction.pdf;
 }
-location = /Documents/Permits/ResidentialCertificateofDesign.pdf {
+location ~* ^/Documents/Permits/ResidentialCertificateofDesign.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Certificate-of-Design-for-Residental-Construction.pdf;
 }
-location = /Documents/Licenses/Automotive%20Licenses%20Instructions.pdf {
+location ~* ^/Documents/Licenses/Automotive%20Licenses%20Instructions.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Automotive-License-Instructions.pdf;
 }
-location = /Documents/Permits/BBSAppeal.pdf {
+location ~* ^/Documents/Permits/BBSAppeal.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Board-of-Building-Stanards-Owners-authorization-Letter.pdf;
 }
-location = /documents/permits/instructionsbbsappeal.pdf {
+location ~* ^/documents/permits/instructionsbbsappeal.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Board-of-Building-Standards-Appeal-Instructions.pdf;
 }
-location = /Documents/Licenses/FA-AnnualCert%202012.pdf {
+location ~* ^/Documents/Licenses/FA-AnnualCert%202012.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/Fire-Alarm-Annual-Certification.pdf;
 }
-location = /Documents/certificates/FAQsaboutCertificateofRentalSuitability.pdf {
+location ~* ^/Documents/certificates/FAQsaboutCertificateofRentalSuitability.pdf$ {
     return 301 $scheme://$host/wp-content/uploads/FAQsaboutCertificateofRentalSuitability.pdf;
 }
