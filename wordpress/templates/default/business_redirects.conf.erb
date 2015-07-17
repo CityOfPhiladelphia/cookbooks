@@ -29,6 +29,15 @@ location = /Pages/Result.aspx {
     if ($args ~ "section=Permits") {
         return 301 $scheme://$host/get-licenses-permits/;
     }
+    if ($args ~ "section=Licensing") {
+        return 301 $scheme://$host/get-licenses-permits/;
+    }
+    if ($args ~ "section=Taxes") {
+        return 301 $scheme://$host/understand-taxes//;
+    }
+}
+location = /Pages/Zoning.aspx {
+    return 301 $scheme://$host/location-and-zoning-information/;
 }
 location = /pages/housingrentallicense.aspx {
     return 301 $scheme://$host/housing-inspection-license/;
