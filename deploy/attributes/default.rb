@@ -1,5 +1,5 @@
 default[:wordpress][:siteurl] = 'http://example.com'
-default[:wordpress][:home] = 'https://example.com'
+default[:wordpress][:home] = 'http://example.com'
 default[:wordpress][:debug] = 0
 
 default[:wordpress][:auth_key] = 'put your unique phrase here'
@@ -17,3 +17,5 @@ default[:wordpress][:aws_secret_access_key] = 'no secret key defined'
 default[:wordpress][:s3_bucket] = 'no bucket defined'
 
 default[:wordpress][:https] = 'on'
+
+default[:wordpress][:cache_path] = '/mnt/shared/nginx-cache/'

@@ -1,5 +1,7 @@
+# URLs must not be https for caching to work behind SSL termination
 fastcgi_param WP_SITEURL '<%= node[:wordpress][:siteurl] %>';
 fastcgi_param WP_HOME '<%= node[:wordpress][:home] %>';
+
 fastcgi_param WP_DEBUG '<%= node[:wordpress][:debug] %>';
 
 fastcgi_param AUTH_KEY '<%= node[:wordpress][:auth_key] %>';
@@ -23,3 +25,6 @@ fastcgi_param DB_HOST '<%= @deploy[:database][:host] %>';
 
 # Tell proxied WordPress that https is on to avoid wp-admin loops
 fastcgi_param HTTPS <%= node[:wordpress][:https] %>;
+
+# Save cache files to volume shared across instances
+fastcgi_param RT_WP_NGINX_HELPER_CACHE_PATH <%= node[:wordpress][:cache_path] %>;
