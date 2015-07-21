@@ -54,4 +54,9 @@ node[:deploy].each do |application, deploy|
     action :restart
   end
 
+  # Purge cache
+  directory node[:wordpress][:cache_path] do
+    action :delete
+  end
+
 end
