@@ -50,14 +50,14 @@ node[:deploy].each do |application, deploy|
     variables :deploy => deploy
   end
 
-  service "nginx" do
-    action :restart
-  end
-
   # Purge cache
   directory node[:wordpress][:cache_path] do
     recursive true
     action :delete
+  end
+
+  service "nginx" do
+    action :restart
   end
 
 end
