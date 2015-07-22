@@ -56,6 +56,7 @@ node[:deploy].each do |application, deploy|
 
   # Purge cache
   directory node[:wordpress][:cache_path] do
+    recursive true
     action :delete
   end
 
