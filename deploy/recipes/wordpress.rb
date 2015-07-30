@@ -60,4 +60,22 @@ node[:deploy].each do |application, deploy|
     action :restart
   end
 
+  bash "flush WP rewrite cache" do
+    user deploy[:user]
+    group deploy[:group]
+    cwd deploy[:current_path]
+    code <<-EOH
+      /usr/local/bin/wp rewrite flush
+    EOH
+  end
+
+  bash "update DB if necessary" do
+    user deploy[:user]
+    group deploy[:group]
+    cwd deploy[:current_path]
+    code <<-EOH
+      /usr/local/bin/wp core update-db
+    EOH
+  end
+
 end
