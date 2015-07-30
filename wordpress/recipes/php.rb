@@ -10,6 +10,13 @@ bash "install composer" do
   EOH
 end
 
+bash "install wp-cli" do
+  code <<-EOH
+  curl -sS https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar > /usr/local/bin/wp
+  chmod 755 /usr/local/bin/wp
+  EOH
+end
+
 ruby_block "php.ini tweaks" do
   block do
     fe = Chef::Util::FileEdit.new("/etc/php5/fpm/php.ini")
