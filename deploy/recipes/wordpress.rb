@@ -64,12 +64,12 @@ node[:deploy].each do |application, deploy|
     user deploy[:user]
     group deploy[:group]
     cwd deploy[:current_path]
-    environment => {
+    environment ({
       'DB_NAME' => deploy[:database][:database],
       'DB_USER' => deploy[:database][:username],
       'DB_PASSWORD' => deploy[:database][:password],
       'DB_HOST' => deploy[:database][:host],
-    }
+    })
     code <<-EOH
       /usr/local/bin/wp rewrite flush
       /usr/local/bin/wp core update-db
