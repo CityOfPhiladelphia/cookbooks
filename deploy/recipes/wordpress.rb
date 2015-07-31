@@ -41,7 +41,7 @@ node[:deploy].each do |application, deploy|
     variables :deploy => deploy
   end
 
-  # Set variables in WP environment
+  # Set variables in php-fpm environment
   template "/etc/nginx/wordpress_fastcgi_params" do
     source "wordpress_fastcgi_params.erb"
     owner "root"
@@ -60,20 +60,18 @@ node[:deploy].each do |application, deploy|
     action :restart
   end
 
-  bash "flush WP rewrite cache" do
+  bash "run WP CLI deploy steps" do
     user deploy[:user]
     group deploy[:group]
     cwd deploy[:current_path]
+    environment => {
+      'DB_NAME' => deploy[:database][:database],
+      'DB_USER' => deploy[:database][:username],
+      'DB_PASSWORD' => deploy[:database][:password],
+      'DB_HOST' => deploy[:database][:host],
+    }
     code <<-EOH
       /usr/local/bin/wp rewrite flush
-    EOH
-  end
-
-  bash "update DB if necessary" do
-    user deploy[:user]
-    group deploy[:group]
-    cwd deploy[:current_path]
-    code <<-EOH
       /usr/local/bin/wp core update-db
     EOH
   end
