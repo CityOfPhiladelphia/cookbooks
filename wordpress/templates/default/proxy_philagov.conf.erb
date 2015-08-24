@@ -5,6 +5,13 @@ location /property/ {
     proxy_pass https://cityofphiladelphia.github.io/property2/;
 }
 
+location /property/data/ {
+    proxy_set_header Host cityofphiladelphia.github.io;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass https://cityofphiladelphia.github.io/property-download/;
+}
+
 location /media/ {
     proxy_set_header Host 's3.amazonaws.com';
     proxy_pass https://s3.amazonaws.com/<%= node[:wordpress][:s3_bucket] %>/;
